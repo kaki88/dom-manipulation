@@ -14,37 +14,30 @@
 <div id="second">Use Javascript to display the title!</div>
 
 <script> 
+document.write("<table border='1'>");
+for (var i = 0; i < 5; i++) {
+document.write("<tr id='row-" + i + "'><td>Contenu " + i + "</td></tr>");
+}
+document.write("</table>");
 function couleuraleatoire() {
 return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
 function bouton() {
-document.getElementById("row-0").style.backgroundColor = couleuraleatoire();
-document.getElementById("row-1").style.backgroundColor = couleuraleatoire();
-document.getElementById("row-2").style.backgroundColor = couleuraleatoire();
-document.getElementById("row-3").style.backgroundColor = couleuraleatoire();
-document.getElementById("row-4").style.backgroundColor = couleuraleatoire();
+for (var i = 0; i < 5; i++) {
+document.getElementById("row-" + i + "").style.backgroundColor = couleuraleatoire();
 }
-window.onload=function() {
-var div = document.createElement('div');
-div.id = 'new';
-document.body.appendChild(div);
-document.getElementById("new").innerHTML='<TABLE border=1><TR ><TD id="row-0">Contenu 1</TD></TR><TR id="row-1"><TD>Contenu 2</TD></TR><TR id="row-2"><TD>Contenu 3</TD></TR><TR id="row-3"><TD>Contenu 4</TD></TR><TR id="row-4"><TD>Contenu 5</TD></TR></TABLE>';
-document.getElementById("row-0").style.backgroundColor = "red";   
-document.getElementById("row-1").style.backgroundColor = "blue";
-document.getElementById("row-2").style.backgroundColor = "green";
-document.getElementById("row-3").style.backgroundColor = "yellow";
-document.getElementById("row-4").style.backgroundColor = "purple";
-var divbt = document.createElement('div');
-divbt.id = 'button';
-document.body.appendChild(divbt);
-document.getElementById("button").innerHTML='<br><button id="couleur" onclick="bouton()">Update colors</button>';
-};
+}
+document.write("<br><button id='couleur' onclick='bouton()'>Update colors</button>");
 document.getElementById("first").innerHTML = "Welcome to Simplon Epinal!";
 document.getElementById("first").style.color = "red";
 document.getElementsByClassName("second")[0].innerHTML = "This is a javascript activity";
 document.getElementsByTagName("h3")[0].innerHTML = "see what we can do:";
 document.getElementById("second").innerHTML = "Simplon Demo";
-document.getElementById("row-0").style.color = "red";
+document.getElementById("row-0").style.backgroundColor = "red";   
+document.getElementById("row-1").style.backgroundColor = "blue";
+document.getElementById("row-2").style.backgroundColor = "green";
+document.getElementById("row-3").style.backgroundColor = "yellow";
+document.getElementById("row-4").style.backgroundColor = "purple";
 </script>
 </body>
 </html>
